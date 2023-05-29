@@ -10,6 +10,7 @@ public class GameDirector : MonoBehaviour
     GameObject timeGauge;
     GameObject meterText;
     float meter = 0;
+
     void Start()
     {
         this.timeGauge = GameObject.Find("timeGauge");
