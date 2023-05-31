@@ -16,14 +16,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float InputX = UnityEngine.Input.GetAxisRaw("Horizontal");
-        transform.position += new Vector3(InputX * 0.1f, 0);
-        float InputY = UnityEngine.Input.GetAxisRaw("Vertical");
-        transform.position += new Vector3(0, InputY*0.1f);
-        if (InputY > 0.01f)
-        { this.animator.SetTrigger("LeftTrigger"); }
-        else if (InputY< -0.01f) 
-        { this.animator.SetTrigger("RightTrigger"); }
+        float InputY = UnityEngine.Input.GetAxisRaw("Horizontal");
+        transform.position += new Vector3(InputY * 0.1f, 0);
+        float InputX = UnityEngine.Input.GetAxisRaw("Vertical");
+        transform.position += new Vector3(0, InputX*0.1f);
+        if (InputX == 0)
+        { animator.Play("MyChar"); }
+        else if (InputX == 1)
+        { animator.Play("Left"); }
+        else if (InputX == -1)
+        { animator.Play("Right"); }
         pos = transform.position;
         if (pos.x <= -9)
         {
