@@ -16,15 +16,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float InputY = UnityEngine.Input.GetAxisRaw("Horizontal");
-        transform.position += new Vector3(InputY * 0.1f, 0);
-        float InputX = UnityEngine.Input.GetAxisRaw("Vertical");
-        transform.position += new Vector3(0, InputX*0.1f);
-        if (InputX == 0)
+        float InputX = UnityEngine.Input.GetAxisRaw("Horizontal");
+        transform.position += new Vector3(InputX * 0.15f, 0);
+        float InputY = UnityEngine.Input.GetAxisRaw("Vertical");
+        transform.position += new Vector3(0, InputY*0.15f);
+        if (InputY == 0)
         { animator.Play("MyChar"); }
-        else if (InputX == 1)
+        else if (InputY == 1)
         { animator.Play("Left"); }
-        else if (InputX == -1)
+        else if (InputY == -1)
         { animator.Play("Right"); }
         pos = transform.position;
         if (pos.x <= -9)

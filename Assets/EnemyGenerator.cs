@@ -8,14 +8,19 @@ public class EnemyGenerator : MonoBehaviour
     float span = 1.0f;
     float delta = 0;
 
-    void Update()
+    public void SetParameter(float span)
+    {
+        this.span = span;
+    }
+
+        void Update()
     {
         this.delta += Time.deltaTime;
         if (this.delta > this.span)
         {
             this.delta = 0;
             GameObject go = Instantiate(Enemy_0);
-            int px = Random.Range(5, -5);
+            float px = Random.Range(5f, -5f);
             go.transform.position = new Vector2(10, px);
         }
     }
