@@ -48,7 +48,7 @@ public class GameDirector : MonoBehaviour
         }
         else if (90 <= this.time && this.time < 100)
         {
-            this.generator.GetComponent<EnemyGenerator>().SetParameter(1.0f);
+            this.generator.GetComponent<EnemyGenerator>().SetParameter(1f);
         }
     }
 
